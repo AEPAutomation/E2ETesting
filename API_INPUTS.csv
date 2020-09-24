@@ -1,23 +1,11 @@
-api name,protocol,method,host,port,path,body,headers,expected_code,run_flag
-GET Users,https,GET,${environment},,api/users,,,200,TRUE
-GET SingleUser,https,GET,${environment},,api/users/2,,,200,TRUE
-POST CreateUsers,https,POST,${environment},,api/users,"{
-    ""name"": ${name},
-    ""job"": ""leader""
-}",,200,TRUE
-POST REGISTER,https,POST,${environment},,api/register,"{
-    ""email"": ""eve.holt@reqres.in"",
-    ""password"": ""pistol""
-}",,200,TRUE
-POST Login,https,POST,${environment},,api/login,"{
-    ""email"": ""eve.holt@reqres.in"",
-    ""password"": ""cityslicka""
-}",,200,TRUE
-PUT UpdateUsers,https,PUT,${environment},,api/users/2,"{
-    ""name"":  ${name},
-    ""job"": ""zion resident""
-}",,200,TRUE
-PATCH PartialUpdateUsers,https,PATCH,${environment},,api/users/2,"{
-    ""name"": ${name},
-    ""job"": ""zion resident""
-}",,200,TRUE
+name,protocol,method,host,port,path,body,post_files,headers,outputs,expected_code,expected_result,run_flag,constant_timer
+IDD-001_01_Test GET,http,GET,w3.ibm.com,,/workday,,,,,200,,TRUE,${wait_time}
+IDD-001_02_GET Users,http,GET,${host},,/api/User,,,,,200,,TRUE,${wait_time}
+IDD-001_03_GET SingleUser,http,GET,${host},,/api/User/1,,,,,200,,TRUE,${wait_time}
+IDD-002_01_GET SingleUser,http,GET,${host},,/api/User/2,,,,,200,,TRUE,${wait_time}
+IDD-002_02_POST CreateUsers,http,POST,${host},,/api/User,"{
+    ""id"" : 1,
+""Name"" :""ABC"",
+""Address"":""pqr""
+}",,,,201,,TRUE,${wait_time}
+IDD-002_03_GET Users,http,GET,${host},,/api/User,,,,,200,,TRUE,${wait_time}
