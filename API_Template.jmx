@@ -32,6 +32,11 @@
             <stringProp name="Argument.value">${__P(testTime,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="interface" elementType="Argument">
+            <stringProp name="Argument.name">interface</stringProp>
+            <stringProp name="Argument.value">${__P(interface)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
@@ -183,6 +188,8 @@ vars.put(&quot;collectedTimeStamp&quot;, dateValue);
 
 System.out.println(&quot;-----------&quot;);
 System.out.println(dateValue);
+
+System.out.println(&quot;Interface: &quot;+vars.get(&quot;interface&quot;));
 
 //init environment variables from csv
 </stringProp>
@@ -1307,7 +1314,7 @@ writeResult();</stringProp>
           </hashTree>
         </hashTree>
         <IfController guiclass="IfControllerPanel" testclass="IfController" testname="if run_flag is not false, send API request" enabled="true">
-          <stringProp name="IfController.condition">&quot;${run_flag}&quot; != &quot;FALSE&quot; &amp;&amp; &quot;${run_flag}&quot; != &quot;false&quot; &amp;&amp; (&quot;${protocol}&quot; == &quot;HTTP&quot; || &quot;${protocol}&quot; == &quot;http&quot; || &quot;${protocol}&quot; == &quot;HTTPS&quot; || &quot;${protocol}&quot; == &quot;https&quot;)</stringProp>
+          <stringProp name="IfController.condition">&quot;${run_flag}&quot; != &quot;FALSE&quot; &amp;&amp; &quot;${run_flag}&quot; != &quot;false&quot; &amp;&amp; (&quot;${protocol}&quot; == &quot;HTTP&quot; || &quot;${protocol}&quot; == &quot;http&quot; || &quot;${protocol}&quot; == &quot;HTTPS&quot; || &quot;${protocol}&quot; == &quot;https&quot;) &amp;&amp; &quot;${name}&quot;.startsWith(&quot;${interface}&quot;)</stringProp>
           <boolProp name="IfController.evaluateAll">false</boolProp>
         </IfController>
         <hashTree>
