@@ -9,12 +9,12 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="csvEnv" elementType="Argument">
             <stringProp name="Argument.name">csvEnv</stringProp>
-            <stringProp name="Argument.value">./ENVIRONMENT.csv</stringProp>
+            <stringProp name="Argument.value">./Interface_ENVIRONMENT.csv</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="csvApi" elementType="Argument">
             <stringProp name="Argument.name">csvApi</stringProp>
-            <stringProp name="Argument.value">./API_INPUTS.csv</stringProp>
+            <stringProp name="Argument.value">./Interface_INPUTS.csv</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="outputPath" elementType="Argument">
