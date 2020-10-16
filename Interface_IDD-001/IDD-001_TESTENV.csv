@@ -1,5 +1,5 @@
 key,value
-environment,reqres.in
+host,reqres.in
 wait_time,1000
 protocol,https
 name,morpheus

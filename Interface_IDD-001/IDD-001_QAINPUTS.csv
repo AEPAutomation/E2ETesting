@@ -1,0 +1,11 @@
+name,protocol,method,host,port,path,body,post_files,headers,outputs,expected_code,expected_result,run_flag,constant_timer
+IDD-001_01_Test GET ,http,GET,w3.ibm.com,,/workday,,,,,200,,TRUE,${wait_time}
+IDD-001_02_GET Users,http,GET,${host},,/api/User,,,,,200,,TRUE,${wait_time}
+IDD-001_03_GET SingleUser,http,GET,${host},,/api/User/1,,,,,200,,TRUE,${wait_time}
+IDD-002_01_GET SingleUser,http,GET,${host},,/api/User/2,,,,,200,,TRUE,${wait_time}
+IDD-002_02_POST CreateUsers,http,POST,${host},,/api/User,"{
+    ""id"" : 1,
+""Name"" :""ABC"",
+""Address"":""pqr""
+}",,,,201,,TRUE,${wait_time}
+IDD-002_03_GET Users,http,GET,${host},,/api/User,,,,,200,,TRUE,${wait_time}
